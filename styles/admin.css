@@ -1,0 +1,660 @@
+/*
+written by : Abdul Ghani 143040038
+ditulis sendiri, asli ngga pake comot comot.
+terinspirasi dari devtips tutorial
+enjoy
+
+*/
+
+/*dasar*/
+/* memasukan font font yang digunakan, dan mengatur elemen dasar lainnya */
+/*@font-face {
+  font-family:bebas;
+  src: url('../fonts/BebasNeue.otf');
+}
+
+@font-face {
+  font-family:jenna;
+  src: url('../fonts/JennaSue.ttf');
+}
+*/
+body {
+  font-family:'Trebuchet MS', sans-serif;
+  margin:0;
+}
+
+h1 {
+  color: #ccc;
+  weight: 300;
+}
+
+figure {
+  margin: auto;
+}
+
+.content article {
+  padding: 100px 0;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  height:1000px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*parralax */
+/* mengatur elemen parralax di header, background nya seperti apa, size nya, dan warna nya */
+
+.box-header {
+  position: relative;
+  height: 100vh; /* maksudnya elemen ini punya tinggi sesuai dengan window nya, hampir sama seperti percentage */
+  background-image: url('../img/boy-flying-happiness-1005.jpg');
+  background-size: cover; /* maksudnya ukuran background nya fit ke window, jadi ukurannya mengikuti ukuran window nya, jadi flexible gitu */
+  background-position: center center;
+  background-attachment: fixed; /* biar di scroll tuh si image background nya tetap diam atau fixed, jadi effect parralax nya gitu */
+  overflow: hidden;
+}
+
+.logo {
+  padding:30px 7%;
+  width:40%;
+  border:5px solid rgba(255,255,255,0);
+  border-radius:4px;
+  box-shadow: 0 0 25px rgba(1,1,1,0.4);
+
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);  /* maksudnya agar bener bener center vertikal dan horizontal ditambahkan lagi properti translate */
+
+}
+
+.logo h1 {
+  padding:0;
+  margin:0;
+
+  text-align: center;
+  font-family: bebas;
+  font-size: 115px;
+  color:white;
+  text-shadow:0 0 10px #000;
+}
+
+@media (max-width: 1366px){ /* maksudnya ingin mengubah value dari pengaturan css elemen jika window yang digunakan kurang dari 1366 pixel, jadi desainya tetap responsif */
+  .logo h1 {
+    font-size: 97px;
+  }
+}
+
+.logo p {
+  text-align: center;
+  padding:0;
+  margin:0;
+  font-family: jenna;
+  font-size:50px;
+  color:white;
+  text-shadow:0 0 10px #000;
+
+
+}
+
+.bayangan {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-44%);  
+}
+
+.bayangan h1 {
+  padding:0;
+  margin:0;
+
+  text-align: center;
+  font-family: jenna;
+  font-weight: 0;
+  font-size: 400px;
+  color:rgba(0,0,0,0);
+  text-shadow:0 0 18px #000;
+
+}
+
+/* content design */
+/* mengatur elemen elemen container yang ada, background nya gitu */
+.content {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: bottom center;
+  overflow: hidden;
+}
+
+#section-1 {
+  background-image: url('../img/bike-bike-rider-dark-1181.jpg');
+  background-attachment: fixed;
+  background-position: center center !important;
+  height:auto;
+  padding:100px 0;
+}
+#section-2 {
+  background-image: url('../img/apple-black-and-white-camera-5168-824x550.jpg');
+  background-attachment: fixed;
+  height:auto;
+  padding:100px 0;
+}
+#section-3 {
+  background-image: url('../img/bench-chilling-friends-798.jpg');
+  background-attachment: fixed;
+  padding-bottom: 10px;
+}
+
+/* table design */
+.kanan table {
+  margin-top: 15px;
+}
+.kanan table tr td {
+  padding-right:15px;
+}
+.kanan table {
+  color: white;
+}
+
+/* navigation design */
+.navigation {
+  position:fixed;
+  z-index: 5;
+  width:100vw;
+  height:55px;
+  background-color: rgba(255,255,255,.5);
+  box-shadow: 0 0 15px #000;
+  top:-65px;
+  transition:.3s;
+}
+.navigation ul {
+  float:right;
+  margin-right:50px;
+}
+.navigation ul li {
+  display:inline-block;
+  margin-right: 15px;
+
+}
+.navigation ul li a {
+  text-decoration: none;
+  color:white;
+  font-family: jenna;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow:0 0 8px black;
+  transition:.3s;
+}
+.navigation ul li a:hover {
+  color: rgba(246, 255, 185, 0.81)
+}
+.navigation-kiri {
+  float:left;
+  margin-left:50px;
+  color:white;
+  font-family: jenna;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow:0 0 8px black;
+  top:16px;
+  position: relative;
+
+  background-image: url('../img/bench-chilling-friends-798.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+
+  border:3px solid white;
+  padding:7px 12px;
+  box-shadow: 0 0 5px black;
+  border-radius:3px;
+}
+
+/* footer */
+.flogo {
+  border:4px solid white;
+  border-radius: 2px;
+  padding:8px 16px;
+  position:absolute;
+  top :50%;
+  margin-left:25px;
+  transform:translateY(-50%);
+  display:inline-block;
+
+  color:white;
+  font-weight: bold;
+  font-style: italic;
+  font-family: jenna;
+  font-size: 25px;
+}
+
+#section-4 {
+  background-image: url('../img/analog-camera-photo-photography-1495.jpg');
+  background-position: center center;
+  height:100px;
+  position:relative;
+}
+#section-4 ul {
+  position:absolute;
+  top :50%;
+  transform:translateY(-50%);
+  margin:0;
+  padding:20px;
+  margin-left:160px;
+}
+#section-4 ul li {
+  display:inline-block;
+  margin-right: 15px;
+}
+#section-4 ul li a {
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 0 0 5px #000;
+  transition:.3s;
+}
+
+/* section about */
+.about {
+  margin:0 auto 0;
+  padding:50px;
+  padding-bottom: 76px;
+  background-color: rgba(36, 36, 36, 0.6);
+  width:70vw;
+  transition:.5s;
+  opacity:0;
+  transform:translateX(50px);
+}
+
+.about img {
+  width:20vw;
+}
+
+.kiri {
+  width:18vw;
+  float: left;
+  display:inline-block;
+}
+.kanan {
+  width:45vw;
+  color:white;
+  display:inline-block;
+  margin-left: 2vw;
+}
+.kanan h3 {
+  font-family: jenna;
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: 35px;
+  line-height: 0;
+}
+
+/* skill */
+.skill-lockup {
+  max-width: 70vw;
+  margin: 20px auto;
+  color:white;
+  background-color: rgba(36, 36, 36, 0.6);
+  padding:50px;
+  opacity:0;
+  transform:translateX(-100px);
+  transition:0.5s;
+}
+
+.skill-lockup h2 {
+  color:white;
+  font-family: jenna;
+  font-size: 60px;
+  text-align: center;
+  margin:20px 0 60px;
+  line-height: 0;
+}
+.skill-unit-container {
+  max-width: 59vw;
+  margin:0 auto;
+  height:100px;
+}
+.skill-unit {
+  width:27%;
+  float:left;
+  margin:10px;
+}
+
+@media (max-width: 1188px){
+  .skill-level {
+    width:109px;
+  }
+  .skill-unit-container {
+    width:450px;
+  }
+}
+
+@media (max-width:631px){
+  .skill-unit{
+    margin-right: 50px;
+  }
+}
+
+.skill-label {
+  margin-bottom: 9px;
+  margin-top: 15px;
+}
+.skill-level span {
+  display:inline-block;
+  background-color: white;
+  width:14px;
+  height:14px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border-radius:50%;
+  box-shadow: 0 0 5px rgba(0,0,0,.8);
+}
+
+.filled {
+  display:inline;
+}
+.skill-level .filled span:after {
+  content: '';
+  display:block;
+  width:10px;
+  height:10px;
+  background-color: rgba(53, 22, 22, 0.9);
+  border-radius: 50%;
+  margin:2px;
+}
+
+/* work section */
+.portofolio {
+  max-width: 90vw;
+  margin:0 auto;
+  padding:50px 50px 50px;
+  border-radius: 10px;
+  opacity:0;
+  transform:translateY(-100px);
+  transition:0.5s;
+
+}
+.portofolio h2 {
+  color:white;
+  font-family: jenna;
+  font-size: 60px;
+  text-align: center;
+  margin:20px 0 60px;
+  line-height: 0;
+  text-shadow:0 0 10px black;
+}
+.isi-portofolio {
+  max-width: 84.5%;
+  margin:0 auto;
+  padding:1%;
+  box-shadow: 0 0 15px black;
+
+  background-image: url('../img/apple-black-and-white-camera-5168-824x550.jpg');
+  background-size: 115%;
+  background-attachment: fixed;
+  background-position: center center;
+  border-radius: 10px;
+
+}
+
+.kerjaan {
+  width:24.5%;
+  padding-bottom:24.5%;
+  background-color: #1E2126;
+  display:inline-block;
+  margin:0;
+  color:white;
+  font-family: jenna;
+  margin-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+@media (max-width: 999px){
+  .kerjaan {
+    width:47%;
+    padding-bottom:47%;
+  }
+}
+
+.kerjaan:hover .overlay {
+  top:0;
+}
+.kerjaan a {
+  text-decoration: none;
+  color:white;
+  font-weight: 500;
+}
+.overlay {
+  width:100%;
+  height:100%;
+  background-color: rgba(210, 83, 24, 0.77);
+  position:absolute;
+  top:300%;
+  transition:.4s;
+}
+.text-overlay {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size: 40px;
+}
+#kerjaan-1 {
+  background-image: url('../img/break-city-funny-1427.jpg');
+  background-size: 40%;
+  background-attachment: fixed;
+  background-position: center center;
+}
+#kerjaan-2 {
+  background-image: url('../img/inagurasi.jpg');
+  background-size: 30%;
+  background-attachment: fixed;
+  background-position: right center;
+}
+#kerjaan-3 {
+  background-image: url('../img/english-project.jpg');
+  background-size: 40%;
+  background-attachment: fixed;
+  background-position: left center;
+}
+#kerjaan-4 {
+  background-image: url('../img/movie-night.jpg');
+  background-size: 26%;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+/* Contact Sections */
+.contact-header {
+  color:white;
+  font-family: jenna;
+  font-size: 60px;
+  text-align: center;
+  margin:120px 0 60px;
+  line-height: 0;
+  text-shadow:0 0 10px black;
+  opacity: 0;
+  transition:.75s;
+}
+.contact-container {
+  width:80%;
+  background-color: rgba(21, 66, 104, 0.1);
+  margin:0 auto;
+  padding:3% 0 1%;
+  position: relative;
+  border:5px solid white;
+  border-radius: 15px;
+  transition:0.6s;
+  opacity:0;
+}
+.atas {
+  text-align: center;
+}
+.social-icon {
+  width:70px;
+  height:70px;
+  background-size: cover;
+  display:inline-block;
+  margin: 0 40px;
+}
+.atas a {
+  text-decoration: none;
+  color:white;
+  font-family: jenna;
+  display: inline-block;
+  font-size: 40px;
+}
+.atas a p {
+  line-height: 0;
+  margin-top: 25px;
+}
+#twitter-icon {
+  background-image: url('../img/SVG/twitter2.svg');
+}
+#gplus-icon {
+  background-image: url('../img/SVG/google-plus2.svg');
+}
+#pinterest-icon {
+  background-image: url('../img/SVG/pinterest2.svg');
+}
+.bawah {
+  border-top:5px solid white;
+  text-align: center;
+  display:inline-block;
+  width: 100%;
+}
+.bawah h3 {
+  text-decoration: none;
+  color:white;
+  font-family: jenna;
+  display: inline-block;
+  font-size: 40px;
+  line-height: 0;
+  margin-bottom: -200px;
+  padding:0;
+}
+.bawah h4 a {
+  text-decoration: none;
+  color:white;
+  font-family: bebas;
+  display: inline-block;
+  font-size: 120px;
+  line-height: 0;
+  padding: 0;
+}
+@media (max-width: 1377px){
+  .bawah h4 a {
+    font-size: 90px;
+    margin-top: 60px;
+  }
+}
+@media (max-width: 1065px){
+  .bawah h4 a {
+    font-size: 65px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 748px){
+  .bawah h4 a {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 467px){
+  .bawah h4 a p {
+    display:none;
+  }
+  .bawah h4 a {
+    background-image: url('../img/SVG/envelop.svg');
+    width:110px;
+    height:110px;
+    background-size: cover;
+    margin: 50px auto 3px;
+  }
+  #section-3 {
+    padding-bottom: 75px;
+  }
+  .logo h1 {
+    font-size: 58px;
+  }
+  .atas {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 395px){
+  #section-3 {
+    padding-bottom: 250px;
+  }
+}
+
+.ditampilkan {
+  opacity:1 !important;
+  transform:translateX(0) !important;
+  transform:translateY(0) !important;
+}
+
+/* login form wrap */
+.login-wrap {
+  width:300px;
+  position:absolute;
+  top:80px;
+  right:70px;
+  border-radius:7px;
+  background-color: rgba(0,0,0,0.28);
+  box-shadow:0 0 10px #000;
+  display: none;
+}
+
+.login-ditampilkan {
+  opacity:1;
+  transform:translateY(0) !important;
+}
+
+.login-wrap h1 {
+  text-align:center;
+  font-family:bebas;
+  line-height:.9;
+  color:white;
+  text-shadow:0 0 7px #222;
+}
+
+.isi-login {
+  margin:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.login-wrap p{
+  text-align:center;
+  width:100%;
+
+}
+.login-wrap a {
+  text-decoration:none;
+  color:#fff;
+  color:white;
+  text-shadow:0 0 10px #000;
+
+}
+.input {
+  text-align:center;
+  border:0;
+  margin-top:5px;
+  padding:5px;
+  width:100%;
+}
+.submit {
+  border:0;
+  background-color:rgba (30,30,30 0.66);
+  margin-top:5px;
+  padding:4px;
+  width:100%;
+}
